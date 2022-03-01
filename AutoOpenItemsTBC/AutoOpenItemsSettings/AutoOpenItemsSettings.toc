@@ -1,0 +1,11 @@
+## Interface: 20502
+## Title: AutoOpenItemsSettings
+## Notes: Auto open the items of the whitelist you add in the file AutoOpenItems.lua
+## Author: Glofuss
+## Version: 0.0.1
+## Notes: Auto Opens Items that you can add with a easy 2 use UI.
+## DefaultState: enabled
+## RequiredDeps: AutoOpenItems
+## LoadOnDemand 1
+
+Interface.lua
