@@ -238,18 +238,21 @@ function AutoOpenItems:Register(event, func)
 	end
 end
 
--- Search through bag for the item ID's and use them
+function CheckBag()
+    if not InCombatLockdown() then
+        for bag = 0, 4 do
+            for slot = 0, GetContainerNumSlots(bag) do
+                local id = GetContainerItemID(bag, slot)
+                if id and Whitelist[id] then
+                    UseContainerItem(bag, slot)
+                    DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00Opening : " .. GetContainerItemLink(bag, slot) .. " ID: " .. GetContainerItemID(bag, slot))
+                    return
+                end
+            end
+        end
+    end
+end
 
-AutoOpenItems:Register('BAG_UPDATE_DELAYED', function(bag)
-	
-	for bag = 0, 4 do
-		for slot = 0, GetContainerNumSlots(bag) do
-			local id = GetContainerItemID(bag, slot)
-			if id and Whitelist[id] then
-				UseContainerItem(bag, slot)
-				DEFAULT_CHAT_FRAME:AddMessage("|cFF00FF00Opening : " .. GetContainerItemLink(bag, slot) .. " ID: " .. GetContainerItemID(bag, slot))
-				return
-			end
-		end
-	end
-end)
+AutoOpenItems:Register('BAG_UPDATE_DELAYED', CheckBag)
+
+AutoOpenItems:Register('PLAYER_REGEN_ENABLED', CheckBag)
