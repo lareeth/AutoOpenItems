@@ -3,7 +3,6 @@
 ## Notes: Automatically open the things you loot.
 ## Author: Glofuss & Gogo
 ## Version: 2022-03-22
-## Notes: Auto Opens Items that you can add with a easy 2 use UI.
 ## DefaultState: enabled
 
 AutoOpenItems.lua
