@@ -169,6 +169,7 @@ local Whitelist = {
 	[25423]			= true,			-- Bag of Premium Gems
 	[33844]			= true,			-- Barrel of Fish
 	[34846]			= true,			-- Black Sack of Gems
+	[191060]		= true,			-- Black Sack of Gems
 	[35313]			= true,			-- Bloated Barbed Gill Trout
 	[35286]			= true,			-- Bloated Giant Sunfish
 	[35945]			= true,			-- Brilliant Glass
