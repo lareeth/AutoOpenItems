@@ -1,11 +1,6 @@
--- Creating a script 
-
 local AutoOpenItems = CreateFrame('Frame')
+
 AutoOpenItems:SetScript('OnEvent', function(self, event, ...) self[event](...) end)
-
-print("|cff00FF80Auto Open Items : Loaded WoW TBC")
-
--- Add id here: 
 
 local Whitelist = {
 
@@ -157,6 +152,122 @@ local Whitelist = {
 	[17965]			= true,			-- Yellow Sack of Gems
 	[22137]			= true,			-- Ysida's Satchel
 
+	-- Vanilla; Quest Starting Items
+
+	--[[
+
+	[22970] 		= true,			-- A Bloodstained Envelope
+	[22972] 		= true,			-- A Careworn Note
+	[22973] 		= true,			-- A Crumpled Missive
+	[22723] 		= true,			-- A Letter from the Keeper of the Rolls
+	[2839] 			= true,			-- A Letter to Yvette
+	[11116] 		= true,			-- A Mangled Journal
+	[22974] 		= true,			-- A Ragged Page
+	[22975] 		= true,			-- A Smudged Document
+	[3317] 			= true,			-- A Talking Head
+	[22977] 		= true,			-- A Torn Letter
+	[4881] 			= true,			-- Aged Envelope
+	[2794] 			= true,			-- An Old History Book
+	[2874] 			= true,			-- An Unsent Letter
+	[21230] 		= true,			-- Ancient Qiraji Artifact
+	[18706] 		= true,			-- Arena Master
+	[12564] 		= true,			-- Assassination Note
+	[3668] 			= true,			-- Assassin's Contract
+	[16408] 		= true,			-- Befouled Water Globe
+	[18987] 		= true,			-- Blackhand's Command
+	[13140] 		= true,			-- Blood Red Key
+	[14650] 		= true,			-- Bloodhoof Village Gift Voucher
+	[12558] 		= true,			-- Blue-feathered Necklace
+	[5352] 			= true,			-- Book: The Powers Below
+	[20461] 		= true,			-- Brann Bronzebeard's Lost Letter
+	[20460] 		= true,			-- Brann Bronzebeard's Lost Letter
+	[14651] 		= true,			-- Brill Gift Voucher
+	[1357] 			= true,			-- Captain Sanders' Treasure Map
+	[4098] 			= true,			-- Carefully Folded Note
+	[18950] 		= true,			-- Chambermaid Pillaclencher's Pillow
+	[4926] 			= true,			-- Chen's Empty Keg
+	[4613] 			= true,			-- Corroded Black Box
+	[4056] 			= true,			-- Cortello's Riddle
+	[5877] 			= true,			-- Cracked Silithid Carapace
+	[12842] 		= true,			-- Crudely-written Log
+	[9254] 			= true,			-- Cuergo's Treasure Map
+	[16790] 		= true,			-- Damp Note
+	[20741] 		= true,			-- Deadwood Ritual Totem
+	[4854] 			= true,			-- Demon Scarred Cloak
+	[14648] 		= true,			-- Dolanaar Gift Voucher
+	[17126] 		= true,			-- Elegant Letter
+	[12771] 		= true,			-- Empty Firewater Flask
+	[17409] 		= true,			-- Encrusted Crystal Fragment
+	[3706] 			= true,			-- Ensorcelled Parchment
+	[10454] 		= true,			-- Essence of Eranikus
+	[4903] 			= true,			-- Eye of Burning Shadow
+	[23184] 		= true,			-- Flame of Darnassus
+	[23183] 		= true,			-- Flame of Ironforge
+	[23179] 		= true,			-- Flame of Orgrimmar
+	[23182] 		= true,			-- Flame of Stormwind
+	[23181] 		= true,			-- Flame of the Undercity
+	[23180] 		= true,			-- Flame of Thunder Bluff
+	[20310] 		= true,			-- Flayed Demon Skin
+	[11668] 		= true,			-- Flute of Xavaric
+	[12780] 		= true,			-- General Drakkisath's Command
+	[1962] 			= true,			-- Glowing Shadowhide Pendant
+	[10441] 		= true,			-- Glowing Shard
+	[1307] 			= true,			-- Gold Pickup Schedule
+	[14646] 		= true,			-- Goldshire Gift Voucher
+	[9370] 			= true,			-- Gordunni Scroll
+	[9326] 			= true,			-- Grime-Encrusted Ring
+	[11818] 		= true,			-- Grimesilt Outhouse Key
+	[5138] 			= true,			-- Harvester's Head
+	[13250] 		= true,			-- Head of Balnazzar
+	[13920] 		= true,			-- Healthy Dragon Scale
+	[5791] 			= true,			-- Henrig Lonebrow's Journal
+	[5099] 			= true,			-- Hoof of Lakota'mani
+	[14647] 		= true,			-- Kharanos Gift Voucher
+	[6172] 			= true,			-- Lost Supplies
+	[20949] 		= true,			-- Magical Ledger
+	[10000] 		= true,			-- Margol's Horn
+	[8524] 			= true,			-- Model 4711-FTZ Power Source
+	[3985] 			= true,			-- Monogrammed Sash
+	[5179] 			= true,			-- Moss-twined Heart
+	[6196] 			= true,			-- Noboru's Cudgel
+	[10589] 		= true,			-- Oathstone of Ysera's Dragonflight
+	[22719] 		= true,			-- Omarion's Handbook
+	[8704] 			= true,			-- OOX-09/HL Distress Beacon
+	[8623] 			= true,			-- OOX-17/TN Distress Beacon
+	[8705] 			= true,			-- OOX-22/FE Distress Beacon
+	[5102] 			= true,			-- Owatanka's Tailspike
+	[4614] 			= true,			-- Pendant of Myzrael
+	[18972] 		= true,			-- Perfect Yeti Hide
+	[10590] 		= true,			-- Pocked Black Box
+	[18969] 		= true,			-- Pristine Yeti Hide
+	[14649] 		= true,			-- Razor Hill Gift Voucher
+	[10621] 		= true,			-- Runed Scroll
+	[19423] 		= true,			-- Sayge's Fortune #23
+	[19424] 		= true,			-- Sayge's Fortune #24
+	[19443] 		= true,			-- Sayge's Fortune #25
+	[19452] 		= true,			-- Sayge's Fortune #27
+	[16304] 		= true,			-- Shadumbra's Head
+	[16305] 		= true,			-- Sharptalon's Claw
+	[7666] 			= true,			-- Shattered Necklace
+	[9250] 			= true,			-- Ship Schedule
+	[6497] 			= true,			-- Simple Parchment
+	[17008] 		= true,			-- Small Scroll
+	[17115] 		= true,			-- Squirrel Token
+	[17116] 		= true,			-- Squirrel Token
+	[16782] 		= true,			-- Strange Water Globe
+	[6775] 			= true,			-- Tome of Divinity
+	[6916] 			= true,			-- Tome of Divinity
+	[6776] 			= true,			-- Tome of Valor
+	[11463] 		= true,			-- Undelivered Parcel
+	[16303] 		= true,			-- Ursangous's Paw
+	[12563] 		= true,			-- Warlord Goretooth's Command
+	[5103] 			= true,			-- Washte Pawne's Feather
+	[4433] 			= true,			-- Waterlogged Envelope
+	[1972] 			= true,			-- Westfall Deed
+	[20742] 		= true,			-- Winterfall Ritual Totem
+
+	]]
+
 	-- The Burning Crusade
 
 	[34583]			= true,			-- Aldor Supplies Package
@@ -235,6 +346,117 @@ local Whitelist = {
 	[30260]			= true,			-- Voren'thal's Package
 	[34426]			= true,			-- Winter Veil Gift
 	
+	-- The Burning Crusade; Quest Starting Items
+
+	--[[
+
+	[24132]			= true,			-- A Letter from the Admiral
+	[28552]			= true,			-- A Mysterious Tome
+	[23249]			= true,			-- Amani Invasion Plans
+	[23580]			= true,			-- Avruu's Orb
+	[22888]			= true,			-- Azure Watch Gift Voucher
+	[29234]			= true,			-- Belmara's Tome
+	[23910]			= true,			-- Blood Elf Communication
+	[24414]			= true,			-- Blood Elf Plans
+	[37571]			= true,			-- Brew of the Month Club Membership Form
+	[37599]			= true,			-- Brew of the Month Club Membership Form
+	[37736]			= true,			-- Brew of the Month Club Membership Form
+	[37737]			= true,			-- Brew of the Month Club Membership Form
+	[29590]			= true,			-- Burning Legion Missive
+	[29588]			= true,			-- Burning Legion Missive
+	[31707]			= true,			-- Cabal Orders
+	[21776]			= true,			-- Captain Kelisendra's Lost Rutters
+	[29236]			= true,			-- Cohlien's Cap
+	[25459]			= true,			-- Count Ungula's Mandible
+	[29476]			= true,			-- Crimson Crystal Shard
+	[31384]			= true,			-- Damaged Mask
+	[29233]			= true,			-- Dathric's Blade
+	[23797]			= true,			-- Diabolical Plans
+	[23777]			= true,			-- Diabolical Plans
+	[38281]			= true,			-- Direbrew's Dire Brew
+	[38280]			= true,			-- Direbrew's Dire Brew
+	[24330]			= true,			-- Drain Schematics
+	[23338]			= true,			-- Eroded Leather Case
+	[23678]			= true,			-- Faintly Glowing Crystal
+	[20938]			= true,			-- Falconwing Square Gift Voucher
+	[28598]			= true,			-- Fel Reaver Construction Manual
+	[35568]			= true,			-- Flame of Silvermoon
+	[35569]			= true,			-- Flame of the Exodar
+	[31363]			= true,			-- Gorgrom's Favor
+	[23850]			= true,			-- Gurf's Dignity
+	[33978]			= true,			-- Honorary Brewer Hand Stamp
+	[34028]			= true,			-- Honorary Brewer Hand Stamp
+	[24504]			= true,			-- Howling Wind
+	[30579]			= true,			-- Illidari-Bane Shard
+	[30756]			= true,			-- Illidari-Bane Shard
+	[20765]			= true,			-- Incriminating Documents
+	[20798]			= true,			-- Intact Arcane Converter
+	[32523]			= true,			-- Ishaal's Almanac
+	[25705]			= true,			-- Luanga's Orders
+	[25706]			= true,			-- Luanga's Orders
+	[29235]			= true,			-- Luminrath's Mantle
+	[31120]			= true,			-- Meeting Note
+	[32726]			= true,			-- Murkblood Escape Plans
+	[24558]			= true,			-- Murkblood Invasion Plans
+	[24559]			= true,			-- Murkblood Invasion Plans
+	[23228]			= true,			-- Old Whitebark's Pendant
+	[23890]			= true,			-- Ominous Letter
+	[23892]			= true,			-- Ominous Letter
+	[31489]			= true,			-- Orb of the Grishna
+	[24367]			= true,			-- Orders from Lady Vashj
+	[32621]			= true,			-- Partially Digested Hand
+	[31239]			= true,			-- Primed Key Mold
+	[31241]			= true,			-- Primed Key Mold
+	[23870]			= true,			-- Red Crystal Pendant
+	[23759]			= true,			-- Rune Covered Tablet
+	[33114]			= true,			-- Sealed Letter
+	[33115]			= true,			-- Sealed Letter
+	[35723]			= true,			-- Shards of Ahune
+	[34469]			= true,			-- Strange Engine Part
+	[20483]			= true,			-- Tainted Arcane Sliver
+	[31345]			= true,			-- The Journal of Val'zareq
+	[22597]			= true,			-- The Lady's Necklace
+	[24228]			= true,			-- The Sun King's Command
+	[30431]			= true,			-- Thunderlord Clan Artifact
+	[23900]			= true,			-- Tzerak's Armor Plate
+	[24407]			= true,			-- Uncatalogued Species
+	[29738]			= true,			-- Vial of Void Horror Ooze
+	[28113]			= true,			-- Warboss Nekrogg's Orders
+	[28114]			= true,			-- Warboss Nekrogg's Orders
+	[23837]			= true,			-- Weathered Treasure Map
+	[24483]			= true,			-- Withered Basidium
+	[24484]			= true,			-- Withered Basidium
+	
+	]]
+
+	-- Wrath of the Lich King
+
+	[44161]			= true,			-- Arcane Tarot
+	[44951]			= true,			-- Box of Bombs
+	[44700]			= true, 		-- Brooding Darkwater Clam
+	[36781]			= true,			-- Darkwater Clam
+	[44943]			= true,			-- Icy Prism
+	[35792]			= true,			-- Mage Hunter Personal Effects
+	[37168]			= true,			-- Mysterious Tarot
+	[39418]			= true,			-- Ornately Jeweled Box
+	[44163]			= true,			-- Shadowy Tarot
+	[41888]			= true,			-- Small Velvet Bag
+	[44142]			= true,			-- Strange Tarot
+
+	-- Wrath of the Lich King; Quest Starting Items 
+	
+	--[[
+	
+	[36756]			= true, 		-- Captain Malin's Letter
+	[33347]			= true, 		-- Gjalerbron Attack Plans
+	[36742]			= true, 		-- Goramosh's Strange Device
+	[34777]			= true, 		-- Ith'rix's Hardened Carapace
+	[35648]			= true, 		-- Scintillating Fragment
+	[34984]			= true, 		-- The Ultrasonic Screwdriver
+	[33345]			= true, 		-- Vrykul Scroll of Ascension
+	
+	]]
+
 }
 
 function AutoOpenItems:Register(event, func)
@@ -245,20 +467,22 @@ function AutoOpenItems:Register(event, func)
 end
 
 function CheckBag()
-    if not InCombatLockdown() then
-        for bag = 0, 4 do
-            for slot = 0, GetContainerNumSlots(bag) do
-                local id = GetContainerItemID(bag, slot)
-                if id and Whitelist[id] then
-                    UseContainerItem(bag, slot)
-                    DEFAULT_CHAT_FRAME:AddMessage("|cff00FF80Auto Open Items : " .. GetContainerItemLink(bag, slot))
-                    return
-                end
-            end
-        end
+    if (not InCombatLockdown()) and (not (MerchantFrame and MerchantFrame:IsShown())) then
+	    for bag = 0, 4 do
+	        for slot = 0, GetContainerNumSlots(bag) do
+	            local id = GetContainerItemID(bag, slot)
+	            if id and Whitelist[id] then
+	                UseContainerItem(bag, slot)
+	                -- DEFAULT_CHAT_FRAME:AddMessage("|cff00FF80Auto Open Items : " .. GetContainerItemLink(bag, slot)) -- You can re-enable the chat message by un-commenting out this line
+	                return
+	            end
+	        end
+	    end
     end
 end
 
 AutoOpenItems:Register('BAG_UPDATE_DELAYED', CheckBag)
 
 AutoOpenItems:Register('PLAYER_REGEN_ENABLED', CheckBag)
+
+AutoOpenItems:Register('MERCHANT_CLOSED', CheckBag)
