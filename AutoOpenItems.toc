@@ -3,7 +3,7 @@
 ## Title: AutoOpenItems
 ## Notes: Automatically open the things you loot.
 ## Author: Glofuss & Gogo
-## Version: 3.0.0
+## Version: 3.0.1
 ## DefaultState: enabled
 
 AutoOpenItems.lua

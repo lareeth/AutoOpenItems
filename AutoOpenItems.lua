@@ -1,6 +1,7 @@
 local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
 local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
 local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
+local GetContainerItemLink = C_Container and C_Container.GetContainerItemLink or _G.GetContainerItemLink
 
 local AutoOpenItems = CreateFrame('Frame')
 
@@ -446,6 +447,8 @@ local Whitelist = {
 	[44163]			= true,			-- Shadowy Tarot
 	[41888]			= true,			-- Small Velvet Bag
 	[44142]			= true,			-- Strange Tarot
+	[44113]			= true,			-- Small Spice Bag
+	[46007]			= true,			-- Bag of Fishing Treasures
 
 	-- Wrath of the Lich King; Quest Starting Items 
 	
