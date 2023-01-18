@@ -19,4 +19,4 @@ jobs:
       - name: Package and release Wrath
         uses: BigWigsMods/packager@master
         with:
-          args: -g wrath
+          args: -S

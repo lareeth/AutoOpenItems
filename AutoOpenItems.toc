@@ -1,8 +1,9 @@
-## Interface: 30401
+## Interface-Classic: 11403
+## Interface-Wrath: 30401
 ## Title: AutoOpenItems
 ## Notes: Automatically open the things you loot.
 ## Author: Glofuss & Gogo
-## Version: 2023-01-18
+## Version: 3.0.0
 ## DefaultState: enabled
 
 AutoOpenItems.lua
