@@ -1,4 +1,4 @@
-## Interface: 20504
+## Interface: 30401
 ## Title: AutoOpenItems
 ## Notes: Automatically open the things you loot.
 ## Author: Glofuss & Gogo
