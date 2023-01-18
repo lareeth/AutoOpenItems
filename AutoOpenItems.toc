@@ -1,0 +1,8 @@
+## Interface: 20504
+## Title: AutoOpenItems
+## Notes: Automatically open the things you loot.
+## Author: Glofuss & Gogo
+## Version: 2022-06-25
+## DefaultState: enabled
+
+AutoOpenItems.lua
