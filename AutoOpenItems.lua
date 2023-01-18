@@ -1,3 +1,7 @@
+local GetContainerNumSlots = C_Container and C_Container.GetContainerNumSlots or _G.GetContainerNumSlots
+local GetContainerItemID = C_Container and C_Container.GetContainerItemID or _G.GetContainerItemID
+local UseContainerItem = C_Container and C_Container.UseContainerItem or _G.UseContainerItem
+
 local AutoOpenItems = CreateFrame('Frame')
 
 AutoOpenItems:SetScript('OnEvent', function(self, event, ...) self[event](...) end)
