@@ -1,5 +1,5 @@
+## Interface: 30401
 ## Interface-Classic: 11403
-## Interface-Wrath: 30401
 ## Title: AutoOpenItems
 ## Notes: Automatically open the things you loot.
 ## Author: Glofuss & Gogo
